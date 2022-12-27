@@ -7,24 +7,32 @@
                     Thêm danh mục sản phẩm
                 </header>
                 <div class="panel-body">
+                    <?php 
+                        $message = Session::get('message');
+                        if($message){
+                            echo '<span class="text-arlet">',$message,'</span>';
+                            Session::put('message',null);
+                        }
+                    ?>
                     <div class="position-center">
-                        <form role="form">
+                        <form role="form" action="{{URL::to('/save-category-product')}}" method="post">
+                            {{ csrf_field() }}
                         <div class="form-group">
                             <label for="exampleInputEmail1">Tên danh mục</label>
-                            <input type="email" name="category-product-name" class="for-control" id="exampleInputEmail1" placeholder="Tên danh mục sản phẩm">
+                            <input type="text" name="category_product_name" class="for-control" id="exampleInputEmail1" placeholder="Tên danh mục sản phẩm">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Mô tả danh mục</label>
-                            <textarea style="resize:none" rows="8" class="form-control" name="category-product-describe" id="exampleInputPassword1" placeholder="Mô tả danh mục"></textarea>
+                            <textarea style="resize:none" rows="8" class="form-control" name="category_product_describe" id="exampleInputPassword1" placeholder="Mô tả danh mục"></textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Hiển thị</label>
-                            <select class="form-control input-sm m-bot15">
-                                <option>Ẩn</option>
-                                <option>Hiển thị</option>
+                            <select name="category_product_status" class="form-control input-sm m-bot15">
+                                <option value="0">Ẩn</option>
+                                <option value="1">Hiển thị</option>
                             </select>
                         </div>
-                        <button type="submit" name="add-category-product" class="btn btn-info">Thêm</button>
+                        <button type="submit" name="add-category-product" class="btn btn-info">Thêm Danh Mục</button>
                     </form>
                     </div>
 

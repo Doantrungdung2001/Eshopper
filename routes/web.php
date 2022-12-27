@@ -30,3 +30,4 @@ Route::post('/admin-dashboard','App\Http\Controllers\AdminController@Dashboard')
 //Category Product
 Route::get('/add-category-product','App\Http\Controllers\CategoryProductController@AddCategoryProduct');
 Route::get('/all-category-product','App\Http\Controllers\CategoryProductController@AllCategoryProduct');
+Route::post('/save-category-product','App\Http\Controllers\CategoryProductController@SaveCategoryProduct');
