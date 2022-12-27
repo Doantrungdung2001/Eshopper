@@ -23,3 +23,4 @@ Route::get('/home','App\Http\Controllers\HomeController@index');
 //Backend
 Route::get('/admin','App\Http\Controllers\AdminController@Index');
 Route::get('/dashboard','App\Http\Controllers\AdminController@ShowDashboard');
+Route::post('/admin-dashboard','App\Http\Controllers\AdminController@Dashboard');
