@@ -37,83 +37,26 @@
               </th>
               <th>Tên danh mục</th>
               <th>Hiển thị</th>
-              <th>Ngày thêm</th>
               <th style="width:30px;"></th>
             </tr>
           </thead>
           <tbody>
+            @foreach ($all_category_product as $key => $category_product)
             <tr>
               <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>Idrawfast prototype design prototype design prototype design prototype design prototype design</td>
-              <td><span class="text-ellipsis">Ẩn/Hiển thị</span></td>
-              <td><span class="text-ellipsis">25/12/2022</span></td>
+              <td>{{$category_product->category_name}}</td>
+              <td><span class="text-ellipsis">
+                @if ($category_product->category_status)
+                    Hiển thị
+                @else
+                    Ẩn
+                @endif
+              </span></td>
               <td>
                 <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-active"></i><i class="fa fa-times text-danger text"></i></a>
               </td>
             </tr>
-            <tr>
-              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>Formasa</td>
-              <td>8c</td>
-              <td>Jul 22, 2013</td>
-              <td>
-                <a href="" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>Avatar system</td>
-              <td>15c</td>
-              <td>Jul 15, 2013</td>
-              <td>
-                <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>Throwdown</td>
-              <td>4c</td>
-              <td>Jul 11, 2013</td>
-              <td>
-                <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>Idrawfast</td>
-              <td>4c</td>
-              <td>Jul 7, 2013</td>
-              <td>
-                <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>Formasa</td>
-              <td>8c</td>
-              <td>Jul 3, 2013</td>
-              <td>
-                <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>Avatar system</td>
-              <td>15c</td>
-              <td>Jul 2, 2013</td>
-              <td>
-                <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-              </td>
-            </tr>
-            <tr>
-              <td><label class="i-checks m-b-none"><input type="checkbox" name="post[]"><i></i></label></td>
-              <td>Videodown</td>
-              <td>4c</td>
-              <td>Jul 1, 2013</td>
-              <td>
-                <a href="" class="active" ui-toggle-class=""><i class="fa fa-check text-success text-active"></i><i class="fa fa-times text-danger text"></i></a>
-              </td>
-            </tr>
+            @endforeach
           </tbody>
         </table>
       </div>

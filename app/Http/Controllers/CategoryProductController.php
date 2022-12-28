@@ -13,7 +13,10 @@ class CategoryProductController extends Controller
         return view('admin.addcategory');
     }
     public function AllCategoryProduct(){
-        return view('admin.allcategory');
+        $all_category_product =DB::table('category_product')->get();
+        //dd($all_category);
+        $manager_category_product = view('admin.allcategory')->with('all_category_product',$all_category_product);
+        return view('admin_layout')->with('admmin.allcategoyry',$manager_category_product);
     }
     public function SaveCategoryProduct(Request $request){
         $data = array();
