@@ -24,6 +24,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="assets/Backend/css/font.css" type="text/css"/>
 <link href="assets/Backend/css/font-awesome.css" rel="stylesheet"> 
 <link rel="stylesheet" href="assets/Backend/css/morris.css" type="text/css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
 <!-- calendar -->
 <link rel="stylesheet" href="assets/Backend/css/monthly.css">
 <!-- //calendar -->

@@ -29,4 +29,11 @@ class CategoryProductController extends Controller
         Session::put('message','Thêm danh mục sản phẩm thành công');
         return Redirect::to('add-category-product');
     }
+    public function ActiveCategoryProduct($category_product_id){
+        //DB::table('category_product')->where('id',$category_product_id)->update('category_status'=>0);
+
+    }
+    public function UnactiveCategoryProduct($category_product_id){
+        
+    }
 }

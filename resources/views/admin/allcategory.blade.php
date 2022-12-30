@@ -47,9 +47,9 @@
               <td>{{$category_product->category_name}}</td>
               <td><span class="text-ellipsis">
                 @if ($category_product->category_status)
-                    Hiển thị
+                    <a href="{{URL::to('/unactive-category-product/'.$category_product->id)}}"><span class="fas fa-eye"></span></a>
                 @else
-                    Ẩn
+                <a href="{{URL::to('/active-category-product/'.$category_product->id)}}"><span class="fas fa-eye-slash"></span></a>
                 @endif
               </span></td>
               <td>
