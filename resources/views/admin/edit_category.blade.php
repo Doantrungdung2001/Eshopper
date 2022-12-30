@@ -6,13 +6,6 @@
                 <header class="panel-heading">
                     Thêm danh mục sản phẩm
                 </header>
-                <?php 
-                    $message = Session::get('message');
-                    if($message){
-                        echo '<span class="text-arlet">',$message,'</span>';
-                        Session::put('message',null);
-                    }
-                ?>
                 <div class="panel-body">
                     
                     @foreach($edit_category_product as $key => $edit_value)

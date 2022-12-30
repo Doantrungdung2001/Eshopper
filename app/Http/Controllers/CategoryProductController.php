@@ -49,11 +49,10 @@ class CategoryProductController extends Controller
         DB::table('category_product')->where('id',$category_product_id)->update($data);
         return Redirect::to('all-category-product');
     }
-    // public function DeleteCategoryProduct($category_product_id){
-    //     $all_category_product =DB::table('category_product')->where();
-    //     //dd($all_category);
-    //     $manager_category_product = view('admin.allcategory')->with('all_category_product',$all_category_product);
-    //     return view('admin_layout')->with('admmin.allcategoyry',$manager_category_product);
-    // }
+    public function DeleteCategoryProduct($category_product_id){
+        $delete_category_product =DB::table('category_product')->where('id',$category_product_id)->delete();
+        //dd($all_category);
+        return Redirect::to('all-category-product');
+    }
 
 }

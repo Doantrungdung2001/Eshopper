@@ -56,7 +56,7 @@
                 <a href="{{url('/edit-category-product/'.$category_product->id)}}" class="active" ui-toggle-class="">
                   <i class="fa fa-pencil-square-o text-active"></i>
                 </a>
-                <a href="{{url('/delete-category-product/'.$category_product->id)}}" class="active" ui-toggle-class="">
+                <a onclick="return confirm('Bạn có muốn xóa danh mục này không?')" href="{{url('/delete-category-product/'.$category_product->id)}}" class="active" ui-toggle-class="">
                   <i class="fa fa-times text-danger text"></i>
                 </a>
               </td>
