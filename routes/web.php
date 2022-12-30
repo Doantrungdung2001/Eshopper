@@ -30,8 +30,11 @@ Route::post('/admin-dashboard','App\Http\Controllers\AdminController@Dashboard')
 //Category Product
 Route::get('/add-category-product','App\Http\Controllers\CategoryProductController@AddCategoryProduct');
 Route::get('/all-category-product','App\Http\Controllers\CategoryProductController@AllCategoryProduct');
+Route::get('/edit-category-product/{category_product_id}','App\Http\Controllers\CategoryProductController@EditCategoryProduct');
+Route::get('/delete-category-product/{category_product_id}','App\Http\Controllers\CategoryProductController@DeleteCategoryProduct');
 
 Route::get('/active-category-product/{category_product_id}','App\Http\Controllers\CategoryProductController@ActiveCategoryProduct');
 Route::get('/unactive-category-product/{category_product_id}','App\Http\Controllers\CategoryProductController@UnactiveCategoryProduct');
 
 Route::post('/save-category-product','App\Http\Controllers\CategoryProductController@SaveCategoryProduct');
+Route::post('/update-category-product/{category_product_id}','App\Http\Controllers\CategoryProductController@UpdateCategoryProduct');

@@ -53,7 +53,12 @@
                 @endif
               </span></td>
               <td>
-                <a href="" class="active" ui-toggle-class=""><i class="fa fa-pencil-square-o text-active"></i><i class="fa fa-times text-danger text"></i></a>
+                <a href="{{url('/edit-category-product/'.$category_product->id)}}" class="active" ui-toggle-class="">
+                  <i class="fa fa-pencil-square-o text-active"></i>
+                </a>
+                <a href="{{url('/delete-category-product/'.$category_product->id)}}" class="active" ui-toggle-class="">
+                  <i class="fa fa-times text-danger text"></i>
+                </a>
               </td>
             </tr>
             @endforeach
