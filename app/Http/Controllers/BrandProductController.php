@@ -12,30 +12,36 @@ class BrandProductController extends Controller
     public function AddBrandProduct(){
         return view('admin.add_brand');
     }
-    public function AllCategoryProduct(){
-        $all_category_product =DB::table('category_product')->get();
+    public function AllBrandProduct(){
+        $all_brand_product =DB::table('brand')->get();
         //dd($all_category);
-        $manager_category_product = view('admin.all_category')->with('all_category_product',$all_category_product);
-        return view('admin_layout')->with('admin.all_categoyry',$manager_category_product);
+        $manager_brand_product = view('admin.all_brand')->with('all_brand_product',$all_brand_product);
+        return view('admin_layout')->with('admin.all_brand',$manager_brand_product);
     }
-    public function SaveCategoryProduct(Request $request){
+    public function SaveBrandProduct(Request $request){
         $data = array();
-        $data['category_name'] = $request->category_product_name;
-        $data['category_desc'] = $request->category_product_describe;
-        $data['category_status'] = $request->category_product_status;
+        $data['brand_name'] = $request->brand_product_name;
+        $data['brand_desc'] = $request->brand_product_describe;
+        $data['brand_status'] = $request->brand_product_status;
         
         //dd($data);
-        DB::table('category_product')->insert($data);
+        DB::table('brand')->insert($data);
         Session::put('message','Thêm danh mục sản phẩm thành công');
-        return Redirect::to('add-category-product');
+        return Redirect::to('add-brand-product');
     }
-    public function ActiveCategoryProduct($category_product_id){
-        //DB::table('category_product')->where('id',$category_product_id)->update('category_status'=>0);
+
+    public function ActiveBrandProduct($brand_product_id){
+        DB::table('brand')->where('id',$brand_product_id)->update(['brand_status'=>0]);
+        return Redirect::to('all-brand-product');
 
     }
-    public function UnactiveCategoryProduct($category_product_id){
-        
+    
+    public function UnactiveBrandProduct($brand_product_id){
+        DB::table('brand')->where('id',$brand_product_id)->update(['brand_status'=>1]);
+        return Redirect::to('all-brand-product');
+
     }
+
     public function EditCategoryProduct($category_product_id){
         $edit_category_product =DB::table('category_product')->where('id',$category_product_id)->get();
         //dd($all_category);
