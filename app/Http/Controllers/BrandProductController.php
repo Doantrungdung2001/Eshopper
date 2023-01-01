@@ -35,30 +35,30 @@ class BrandProductController extends Controller
         return Redirect::to('all-brand-product');
 
     }
-    
+
     public function UnactiveBrandProduct($brand_product_id){
         DB::table('brand')->where('id',$brand_product_id)->update(['brand_status'=>1]);
         return Redirect::to('all-brand-product');
 
     }
 
-    public function EditCategoryProduct($category_product_id){
-        $edit_category_product =DB::table('category_product')->where('id',$category_product_id)->get();
-        //dd($all_category);
-        $manager_category_product = view('admin.edit_category')->with('edit_category_product',$edit_category_product);
-        return view('admin_layout')->with('admin.edit_category',$manager_category_product);
+    public function EditBrandProduct($brand_product_id){
+        $edit_brand_product =DB::table('brand')->where('id',$brand_product_id)->get();
+        //dd($all_brand);
+        $manager_brand_product = view('admin.edit_brand')->with('edit_brand_product',$edit_brand_product);
+        return view('admin_layout')->with('admin.edit_brand',$manager_brand_product);
     }
-    public function UpdateCategoryProduct(Request $request,$category_product_id){
+    public function UpdateBrandProduct(Request $request,$brand_product_id){
         $data = array();
-        $data['category_name'] = $request->category_product_name;
-        $data['category_desc'] = $request->category_product_describe;
-        DB::table('category_product')->where('id',$category_product_id)->update($data);
-        return Redirect::to('all-category-product');
+        $data['brand_name'] = $request->brand_product_name;
+        $data['brand_desc'] = $request->brand_product_describe;
+        DB::table('brand')->where('id',$brand_product_id)->update($data);
+        return Redirect::to('all-brand-product');
     }
-    public function DeleteCategoryProduct($category_product_id){
-        $delete_category_product =DB::table('category_product')->where('id',$category_product_id)->delete();
-        //dd($all_category);
-        return Redirect::to('all-category-product');
+    public function DeleteBrandProduct($brand_product_id){
+        $delete_brand_product =DB::table('brand')->where('id',$brand_product_id)->delete();
+        //dd($all_brand);
+        return Redirect::to('all-brand-product');
     }
 
 }
