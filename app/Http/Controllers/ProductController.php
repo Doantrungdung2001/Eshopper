@@ -35,7 +35,7 @@ class ProductController extends Controller
             $get_name_image = $get_image->getClientOriginalName();
             $name_image = current(explode('.',$get_name_image));
             $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
-            $get_image->move('public/assets/uploads/product',$new_image);
+            $get_image->move('assets/uploads/product',$new_image);
             $data['product_image'] = $new_image;
             DB::table('product')->insert($data);
             Session::put('message','Thêm sản phẩm thành công');
