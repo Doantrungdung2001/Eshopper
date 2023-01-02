@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Redirect;
 class ProductController extends Controller
 {
     public function AddProduct(){
-        return view('admin.add_product');
+        $cate_product = DB::table('category_product')->orderBy('id')->get();
+        $brand_product = DB::table('brand')->orderBy('id')->get();
+        return view('admin.add_product')->with('cate_product',$cate_product)->with('brand_product',$brand_product);
     }
     public function AllBrandProduct(){
         $all_brand_product =DB::table('brand')->get();
@@ -18,16 +20,32 @@ class ProductController extends Controller
         $manager_brand_product = view('admin.all_brand')->with('all_brand_product',$all_brand_product);
         return view('admin_layout')->with('admin.all_brand',$manager_brand_product);
     }
-    public function SaveBrandProduct(Request $request){
+    public function SaveProduct(Request $request){
         $data = array();
-        $data['brand_name'] = $request->brand_product_name;
-        $data['brand_desc'] = $request->brand_product_describe;
-        $data['brand_status'] = $request->brand_product_status;
         
+        $data['category_id'] = $request->product_cate;
+        $data['brand_id'] = $request->product_brand;
+        $data['product_name'] = $request->product_name;
+        $data['product_desc'] = $request->product_desc;
+        $data['product_price'] = $request->product_price;
+        $data['product_content'] = $request->product_content;
+        $data['product_status'] = $request->product_status;
+        $get_image = $request->file('product_image');
+        if($get_image){
+            $get_name_image = $get_image->getClientOriginalName();
+            $name_image = current(explode('.',$get_name_image));
+            $new_image = $name_image.rand(0,99).'.'.$get_image->getClientOriginalExtension();
+            $get_image->move('public/assets/uploads/product',$new_image);
+            $data['product_image'] = $new_image;
+            DB::table('product')->insert($data);
+            Session::put('message','Thêm sản phẩm thành công');
+            return Redirect::to('add-product');
+        }
+        $data['product_image'] = '';
+        DB::table('product')->insert($data);
+        Session::put('message','Thêm sản phẩm thành công');
+        return Redirect::to('add-product');
         //dd($data);
-        DB::table('brand')->insert($data);
-        Session::put('message','Thêm danh mục sản phẩm thành công');
-        return Redirect::to('add-brand-product');
     }
 
     public function ActiveBrandProduct($brand_product_id){
