@@ -14,11 +14,14 @@ class ProductController extends Controller
         $brand_product = DB::table('brand')->orderBy('id')->get();
         return view('admin.add_product')->with('cate_product',$cate_product)->with('brand_product',$brand_product);
     }
-    public function AllBrandProduct(){
-        $all_brand_product =DB::table('brand')->get();
+    public function AllProduct(){
+        $all_product =DB::table('product')
+        ->join('category_product','category_product.id','=','product.category_id')
+        ->join('brand','brand.id','=','product.brand_id')
+        ->orderBy('product.id','desc')->get();
         //dd($all_category);
-        $manager_brand_product = view('admin.all_brand')->with('all_brand_product',$all_brand_product);
-        return view('admin_layout')->with('admin.all_brand',$manager_brand_product);
+        $manager_product = view('admin.all_product')->with('all_product',$all_product);
+        return view('admin_layout')->with('admin.all',$manager_product);
     }
     public function SaveProduct(Request $request){
         $data = array();
@@ -48,23 +51,27 @@ class ProductController extends Controller
         //dd($data);
     }
 
-    public function ActiveBrandProduct($brand_product_id){
-        DB::table('brand')->where('id',$brand_product_id)->update(['brand_status'=>0]);
-        return Redirect::to('all-brand-product');
+    public function ActiveProduct($product_id){
+        DB::table('product')->where('id',$product_id)->update(['product_status'=> 0]);
+        return Redirect::to('all-product');
 
     }
 
-    public function UnactiveBrandProduct($brand_product_id){
-        DB::table('brand')->where('id',$brand_product_id)->update(['brand_status'=>1]);
-        return Redirect::to('all-brand-product');
+    public function UnactiveProduct($product_id){
+        DB::table('product')->where('id',$product_id)->update(['product_status'=> 1]);
+        return Redirect::to('all-product');
 
     }
 
-    public function EditBrandProduct($brand_product_id){
-        $edit_brand_product =DB::table('brand')->where('id',$brand_product_id)->get();
+    public function EditProduct($product_id){
+        $cate_product = DB::table('category_product')->orderBy('id','desc')->get();
+        $brand_product = DB::table('brand')->orderBy('id','desc')->get();
+
+        $edit_product =DB::table('brand')->where('id',$product_id)->get();
         //dd($all_brand);
-        $manager_brand_product = view('admin.edit_brand')->with('edit_brand_product',$edit_brand_product);
-        return view('admin_layout')->with('admin.edit_brand',$manager_brand_product);
+        $manager_product = view('admin.edit_product')
+        ->with('edit_product',$edit_product)->with('cate_product',$cate_product)->with('brand_product',$brand_product);
+        return view('admin_layout')->with('admin.edit_product',$manager_product);
     }
     public function UpdateBrandProduct(Request $request,$brand_product_id){
         $data = array();
@@ -73,9 +80,9 @@ class ProductController extends Controller
         DB::table('brand')->where('id',$brand_product_id)->update($data);
         return Redirect::to('all-brand-product');
     }
-    public function DeleteBrandProduct($brand_product_id){
-        $delete_brand_product =DB::table('brand')->where('id',$brand_product_id)->delete();
+    public function DeleteProduct($product_id){
+        $delete_product =DB::table('product')->where('id',$product_id)->delete();
         //dd($all_brand);
-        return Redirect::to('all-brand-product');
+        return Redirect::to('all-product');
     }
 }

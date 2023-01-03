@@ -301,8 +301,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <span>Sản phẩm</span>
                     </a>
                     <ul class="sub">
-						<li><a href="{{URL::to('/add-brand-product')}}">Thêm sản phẩm</a></li>
-						<li><a href="{{URL::to('/all-brand-product')}}">Liệt kê sản phẩm</a></li>
+						<li><a href="{{URL::to('/add-product')}}">Thêm sản phẩm</a></li>
+						<li><a href="{{URL::to('/all-product')}}">Liệt kê sản phẩm</a></li>
                     </ul>
                 </li>
             </ul>            
