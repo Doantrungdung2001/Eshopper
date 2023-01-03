@@ -6,22 +6,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Home | E-Shopper</title>
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
-    <link href="assets/css/prettyPhoto.css" rel="stylesheet">
-    <link href="assets/css/price-range.css" rel="stylesheet">
-    <link href="assets/css/animate.css" rel="stylesheet">
-	<link href="assets/css/main.css" rel="stylesheet">
-	<link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="assets/Frontend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/Frontend/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/Frontend/css/prettyPhoto.css" rel="stylesheet">
+    <link href="assets/Frontend/css/price-range.css" rel="stylesheet">
+    <link href="assets/Frontend/css/animate.css" rel="stylesheet">
+	<link href="assets/Frontend/css/main.css" rel="stylesheet">
+	<link href="assets/Frontend/css/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->       
     <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/assets/images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/Frontend/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/Frontend/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/Frontend/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="assets/Frontend/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
 <body>
@@ -57,7 +57,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.html"><img src="assets/images/home/logo.png" alt="" /></a>
+							<a href="index.html"><img src="assets/Frontend/images/home/logo.png" alt="" /></a>
 						</div>
 						<div class="btn-group pull-right">
 							<div class="btn-group">
@@ -163,8 +163,8 @@
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="assets/images/home/girl1.jpg" class="girl img-responsive" alt="" />
-									<img src="assets/images/home/pricing.png"  class="pricing" alt="" />
+									<img src="assets/Frontend/images/home/girl1.jpg" class="girl img-responsive" alt="" />
+									<img src="assets/Frontend/images/home/pricing.png"  class="pricing" alt="" />
 								</div>
 							</div>
 							<div class="item">
@@ -175,8 +175,8 @@
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="assets/images/home/girl2.jpg" class="girl img-responsive" alt="" />
-									<img src="assets/images/home/pricing.png"  class="pricing" alt="" />
+									<img src="assets/Frontend/images/home/girl2.jpg" class="girl img-responsive" alt="" />
+									<img src="assets/Frontend/images/home/pricing.png"  class="pricing" alt="" />
 								</div>
 							</div>
 							
@@ -188,8 +188,8 @@
 									<button type="button" class="btn btn-default get">Get it now</button>
 								</div>
 								<div class="col-sm-6">
-									<img src="assets/images/home/girl3.jpg" class="girl img-responsive" alt="" />
-									<img src="assets/images/home/pricing.png" class="pricing" alt="" />
+									<img src="assets/Frontend/images/home/girl3.jpg" class="girl img-responsive" alt="" />
+									<img src="assets/Frontend/images/home/pricing.png" class="pricing" alt="" />
 								</div>
 							</div>
 							
@@ -345,7 +345,7 @@
 						</div><!--/price-range-->
 						
 						<div class="shipping text-center"><!--shipping-->
-							<img src="assets/images/home/shipping.jpg" alt="" />
+							<img src="assets/Frontend/images/home/shipping.jpg" alt="" />
 						</div><!--/shipping-->
 					
 					</div>
@@ -373,7 +373,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="assets/images/home/iframe1.png" alt="" />
+										<img src="assets/Frontend/images/home/iframe1.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -388,7 +388,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="assets/images/home/iframe2.png" alt="" />
+										<img src="assets/Frontend/images/home/iframe2.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -403,7 +403,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="assets/images/home/iframe3.png" alt="" />
+										<img src="assets/Frontend/images/home/iframe3.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -418,7 +418,7 @@
 							<div class="video-gallery text-center">
 								<a href="#">
 									<div class="iframe-img">
-										<img src="assets/images/home/iframe4.png" alt="" />
+										<img src="assets/Frontend/images/home/iframe4.png" alt="" />
 									</div>
 									<div class="overlay-icon">
 										<i class="fa fa-play-circle-o"></i>
@@ -431,7 +431,7 @@
 					</div>
 					<div class="col-sm-3">
 						<div class="address">
-							<img src="assets/images/home/map.png" alt="" />
+							<img src="assets/Frontend/images/home/map.png" alt="" />
 							<p>505 S Atlantic Ave Virginia Beach, VA(Virginia)</p>
 						</div>
 					</div>
@@ -518,12 +518,11 @@
 	
 
   
-    <script src="assets/js/jquery.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<script src="assets/js/jquery.scrollUp.min.js"></script>
-	<script src="assets/js/price-range.js"></script>
-    <script src="assets/js/jquery.prettyPhoto.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="assets/Frontend/js/jquery.js"></script>
+	<script src="assets/Frontend/js/bootstrap.min.js"></script>
+	<script src="assets/Frontend/js/jquery.scrollUp.min.js"></script>
+	<script src="assets/Frontend/js/price-range.js"></script>
+    <script src="assets/Frontend/js/jquery.prettyPhoto.js"></script>
+    <script src="assets/Frontend/js/main.js"></script>
 </body>
 </html>
->>>>>>> develop/dungdt
