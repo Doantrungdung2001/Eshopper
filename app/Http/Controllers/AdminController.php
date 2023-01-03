@@ -9,10 +9,19 @@ use Illuminate\Support\Facades\Redirect;
 
 class AdminController extends Controller
 {
+    public function AuthLogin(){
+        $admin_id = Session::get('admin_id');
+        if($admin_id){
+            return Redirect::to('dashboard');
+        }else{
+            return Redirect::to('admin')->send();
+        }
+    }
     public function Index(){
         return view('login');
     }
     public function ShowDashboard(){
+        $this->AuthLogin();
         return view('admin.dashboard');
     }
     public function Dashboard(Request $request){

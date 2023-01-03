@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Redirect;
 
 class BrandProductController extends Controller
 {
+
     public function AddBrandProduct(){
         return view('admin.add_brand');
     }
